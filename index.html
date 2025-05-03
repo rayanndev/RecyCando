@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoColeta - Sistema de Coleta de Resíduos</title>
+    <title>RecyCando</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
 </head>
 <body>
     <div class="conteudo">
@@ -29,62 +32,21 @@
         </header>
 
         <!-- Hero com Mapa -->
-        <section class="secao secao-mapa">
-            <h2 class="secao__titulo">Pontos de Coleta</h2>
-            <div class="mapa__container">
-                <div id="mapa" class="mapa__area"></div>
-                <div class="mapa__controles">
-                    <button class="mapa__botao-zoom mapa__botao-mais" aria-label="Aumentar zoom">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <button class="mapa__botao-zoom mapa__botao-menos" aria-label="Diminuir zoom">
-                        <i class="fas fa-minus"></i>
-                    </button>
+            <section class="secao secao-mapa">
+                <h2 class="secao__titulo">Pontos de Coleta</h2>
+                <div class="mapa__container">
+                    <div id="mapa" class="mapa__area"></div>
+                    <div class="mapa__controles">
+                        <button class="mapa__botao-zoom mapa__botao-mais" aria-label="Aumentar zoom" onclick="map.zoomIn()">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <button class="mapa__botao-zoom mapa__botao-menos" aria-label="Diminuir zoom" onclick="map.zoomOut()">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
                 </div>
-            </div>
+            </section>
             
-            <!-- Filtros -->
-            <div class="filtros">
-                <div class="filtros__grupo">
-                    <select class="filtros__select" id="filtroTipoResiduo">
-                        <option value="todos">Todos os resíduos</option>
-                        <option value="organico">Orgânico</option>
-                        <option value="eletronico">Eletrônico</option>
-                        <option value="papel">Papel</option>
-                        <option value="vidro">Vidro</option>
-                        <option value="metal">Metal</option>
-                        <option value="plastico">Plástico</option>
-                    </select>
-                    <label for="filtroTipoResiduo" class="filtros__icone">
-                        <i class="fas fa-trash-alt"></i>
-                    </label>
-                </div>
-                
-                <div class="filtros__grupo">
-                    <select class="filtros__select" id="filtroDistancia">
-                        <option value="qualquer">Distância</option>
-                        <option value="1">Até 1km</option>
-                        <option value="3">Até 3km</option>
-                        <option value="5">Até 5km</option>
-                        <option value="10">Até 10km</option>
-                    </select>
-                    <label for="filtroDistancia" class="filtros__icone">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </label>
-                </div>
-                
-                <div class="filtros__grupo">
-                    <select class="filtros__select" id="filtroHorario">
-                        <option value="qualquer">Horário de funcionamento</option>
-                        <option value="aberto">Aberto agora</option>
-                        <option value="fim-semana">Aberto fim de semana</option>
-                    </select>
-                    <label for="filtroHorario" class="filtros__icone">
-                        <i class="fas fa-clock"></i>
-                    </label>
-                </div>
-            </div>
-        </section>
 
         <!-- Alertas -->
         <section class="alerta" id="alertaColeta">
@@ -452,6 +414,7 @@
             </div>
         </footer>
     </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
     <script src="script.js"></script>
 </body>
