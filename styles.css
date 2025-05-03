@@ -1,4 +1,3 @@
-/* Variáveis e Reset */
 :root {
     --cor-primaria: #27ae60;
     --cor-primaria-clara: #2ecc71;
@@ -172,100 +171,37 @@ a:hover {
 }
 
 /* Mapa */
-.secao-mapa {
-    padding: 0;
-    overflow: hidden;
-}
-
-.secao-mapa .secao__titulo {
-    padding: 25px 25px 10px;
+.secao__titulo {
+    font-size: 1.5em;
+    margin-bottom: 10px;
 }
 
 .mapa__container {
     position: relative;
-    width: 100%;
-    height: 400px;
-    background-color: #e9ecef;
-    overflow: hidden;
 }
 
 .mapa__area {
+    height: 500px;
     width: 100%;
-    height: 100%;
-    background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=Brazil&zoom=10&size=1200x400&key=YOUR_API_KEY');
-    background-size: cover;
-    background-position: center;
+    border-radius: 10px;
 }
 
 .mapa__controles {
     position: absolute;
-    bottom: 15px;
-    right: 15px;
+    top: 10px;
+    right: 10px;
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
 .mapa__botao-zoom {
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-color: white;
     border: none;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: var(--transicao-padrao);
-}
-
-.mapa__botao-zoom:hover {
-    background-color: #f8f9fa;
-}
-
-/* Filtros */
-.filtros {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    padding: 20px 25px;
-    background-color: #fff;
-}
-
-.filtros__grupo {
-    position: relative;
-    flex: 1 1 200px;
-    min-width: 150px;
-}
-
-.filtros__select {
-    width: 100%;
-    padding: 10px 15px 10px 35px;
-    border: 1px solid var(--cor-borda);
-    border-radius: 20px;
-    appearance: none;
-    background-color: #fff;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='5' viewBox='0 0 10 5'%3E%3Cpath fill='%236c757d' d='M0 0l5 5 5-5z'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 15px center;
-    cursor: pointer;
-    transition: var(--transicao-padrao);
-}
-
-.filtros__select:focus {
-    outline: none;
-    border-color: var(--cor-primaria);
-    box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.2);
-}
-
-.filtros__icone {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--cor-texto-secundaria);
-    pointer-events: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 /* Alertas */
